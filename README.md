@@ -1,5 +1,16 @@
 # Maximo Macchi - Rethink Technical Interview Question #2
 
+## Instructions on how to run
+
+1. Once in the main directory of the project, run the following commands:
+
+```
+npm install
+npm start
+```
+
+2. The project will be viewable at `localhost:3000`
+
 ## Packages / Tools Used
 
 - [Create React App](https://create-react-app.dev/)
