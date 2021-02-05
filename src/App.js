@@ -4,6 +4,7 @@ import { Input, CircularProgress } from '@material-ui/core';
 import { DataGrid } from '@material-ui/data-grid';
 import './App.css';
 
+// Format that DataGrid component refers to when rendering columns
 const cols = [
   { field: 'Country of Listing', headerName: 'Country', width: 130 },
   { field: 'Go Short?', headerName: 'Go Short?', width: 150 },
@@ -42,9 +43,12 @@ function App() {
   // Search through each row and if search terms match anything in a row,
   // include row in the list of filtered rows
   const updateFilteredRows = (terms) => {
+    // Search terms assumed to not need case sensitivity
     let lowerCaseTerms = terms.toString().toLowerCase();
     setFilteredRows(
       rows.filter((row, i, rows) => {
+        // Checks to see if column in a row has a value before running
+        // .includes() checks since not every column in every row has a value
         return (
           (row['Country of Listing'] &&
             row['Country of Listing'].toLowerCase().includes(lowerCaseTerms)) ||
